@@ -1,18 +1,35 @@
-var http = require('http');
-var fs = require('fs');
+var expHBS = require('express-handlebars');
+var express = require("express");
+var app = express();
+app.listen(process.env.PORT || '2101');
+app.engine('handlebars', expHBS({
+    layoutsDir: __dirname + '/views/layouts',
+    defaultLayout: 'main'
+}));
+app.set('view engine','handlebars');
 
-http.createServer(function (req,res){
-   res.writeHead(200,{'Content-Type':'text/html'}) ;
-    var url = req.url;
+app.get('/',function (req,res){
+    res.render('index');
+})
 
-    if(url == '/') {
-        fs.readFile('index.html', function (erro, data) {
-            if (!erro) {
-                res.write(data);
-                res.end();
-            } else {
-                res.end('404 not found');
-            }
-        });
-    }
-}).listen(process.env.PORT || '1234');
+app.use(express.static('assets'));
+
+app.get('/Home.handlebars', function (req, res){
+    res.render('Home');
+})
+
+app.get('/TimKiem.handlebars', function (req, res){
+    res.render('TimKiem');
+})
+
+app.get('/HomeAnh.handlebars', function (req, res){
+    res.render('HomeAnh');
+})
+
+app.get('/HomeUser.handlebars', function (req, res){
+    res.render('HomeUser');
+})
+
+app.get('/DanhSach.handlebars', function (req, res){
+    res.render('DanhSach');
+})

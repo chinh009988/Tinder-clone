@@ -172,6 +172,7 @@ aside{
 .div-control{
   width: 100%;
   height: 4.5%;
+  background-color: #e7fafa;
 }
 
 #label-item1{
@@ -219,7 +220,6 @@ aside{
 .div-item2{
   width: 100%;
   height: 54.9%;
-  background-color: #F4F9F9;
 }
 
 .div-form{
@@ -292,15 +292,15 @@ aside{
 .btn-update{
   width: 20%;
   height: 30px;
-  margin-right: 3%;
   float: right;
-  margin-top: 5%;
-  margin-bottom: 3%;
+  margin-left: 3%;
+  margin-top: 1%;
   border: 2px solid black;
   background-color: white;
   font-family: Cabin,sans-serif;
   font-weight: bold;
   border-radius: 30px;
+  position: absolute;
 }
 
 .btn-update:hover{
@@ -314,13 +314,15 @@ aside{
 .btn-index{
   width: 20%;
   height: 30px;
-  margin-right: 3%;
   float: right;
+  margin-top: 8%;
+  margin-left: 3%;
   border: 2px solid black;
   background-color: white;
   font-family: Cabin,sans-serif;
   font-weight: bold;
   border-radius: 30px;
+  position: absolute;
 }
 
 .btn-index:hover{

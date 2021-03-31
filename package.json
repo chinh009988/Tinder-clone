@@ -15,5 +15,11 @@
   "bugs": {
     "url": "https://github.com/chinh009988/App-Tinder/issues"
   },
-  "homepage": "https://github.com/chinh009988/App-Tinder#readme"
+  "homepage": "https://github.com/chinh009988/App-Tinder#readme",
+  "devDependencies": {
+    "express-handlebars": "^5.3.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
