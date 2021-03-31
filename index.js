@@ -1,6 +1,7 @@
 var expHBS = require('express-handlebars');
 var express = require("express");
 var app = express();
+const post = 3000;
 app.engine('handlebars', expHBS({
     layoutsDir: __dirname + '/views/layouts',
     defaultLayout: 'main'
@@ -32,6 +33,6 @@ app.get('/HomeUser.handlebars', function (req, res){
 app.get('/DanhSach.handlebars', function (req, res){
     res.render('DanhSach');
 })
-app.listen(process.env.PORT,function (){
-
+app.listen(process.env.PORT || post, () =>{
+    console.log(`http://localhost:${post}`)
 });
