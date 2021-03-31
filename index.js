@@ -1,7 +1,7 @@
 var expHBS = require('express-handlebars');
 var express = require("express");
 var app = express();
-app.listen(process.env.PORT || '2101');
+app.listen(process.env.PORT);
 app.engine('handlebars', expHBS({
     layoutsDir: __dirname + '/views/layouts',
     defaultLayout: 'main'
