@@ -33,6 +33,5 @@ app.get('/HomeUser.handlebars', function (req, res){
 app.get('/DanhSach.handlebars', function (req, res){
     res.render('DanhSach');
 })
-app.listen(process.env.PORT || post, () =>{
-    console.log(`http://localhost:${post}`)
-});
+app.listen(process.env.PORT || post, () =>
+    console.log(`http://localhost:${post}`));
