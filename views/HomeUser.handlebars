@@ -14,49 +14,44 @@
 </head>
 <body style="background: white">
     <div class="div-user">
-        <div style="margin-top: 10px;">
-           <p style="font-size: 25px; font-family: Cabin, sans-serif; margin-left: 15px; margin-bottom: 5px; font-weight: 600; color: black">Avatar</p>
-            <img src="" style="width: 100%; height: 150px; background-color: red"/>
-        </div>
-        <div style="margin-left: 20px; margin-top: 10px;">
-            <div style="margin-bottom: 14px">
-                <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">HỌ VÀ TÊN</p>
-                <input type="text" placeholder="Enter the name" style="font-weight: bold;width: 40%; height: 30px; padding-left: 10px; font-family: Quicksand, sans-serif" required/>
+        <form action="update" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="id" value="{{user._id}}">
+            <div style="margin-top: 10px;">
+               <p style="font-size: 25px; font-family: Cabin, sans-serif; margin-left: 15px; margin-bottom: 5px; font-weight: 600; color: black">Avatar</p>
+                <img src="{{user.avatar}}" style="width: 35%; height: 150px; background-color: red; margin-left: 30px"/>
+                <input type="file" name="avatar" style="color: black; font-family: Cabin, sans-serif; border: 1px solid black; background-color: white; border-radius: 20px; position: absolute; margin-top: 117px; margin-left: 15px"/>
             </div>
-            <div style="margin-bottom: 14px">
-                <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">NGÀY SINH</p>
-                <input style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px" type="text" placeholder="Enter the name" required/>
-            </div>
-            <div style="margin-bottom: 14px">
-                <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">SỐ ĐIỆN THOẠI</p>
-                <input type="tel" placeholder="Enter the name" style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px" required/>
-            </div>
-            <div style="margin-bottom: 14px">
-                <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">GIỚI TÍNH</p>
-                <input type="radio" id="Nam" name="gioiTinh" value="Nam" required/>
-                <label for="Nam" style="margin-right: 1rem;color: black;font-family: Cabin, sans-serif">Nam</label>
-                <input type="radio" id="Nu" name="gioiTinh" value="Nu" required/>
-                <label for="Nu" style="color: black;font-family: Cabin, sans-serif">Nữ</label>
-            </div>
-            <div style="margin-bottom: 14px">
-                <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 10px; font-weight: 600; margin-top: 0">SỞ THÍCH</p>
-                <input type="checkbox" id="theThao" name="soThich" value="theThao" required/>
-                <label for="theThao" style="margin-right: 1rem;color: black;font-family: Cabin, sans-serif">Thể thao</label>
-                <input type="checkbox" id="ngheNhac" name="soThich" value="ngheNhac" required/>
-                <label for="ngheNhac" style="margin-right: 1rem;color: black;font-family: Cabin, sans-serif">Nghe nhạc</label>
-                <input type="checkbox" id="docSach" name="soThich" value="docSach" required/>
-                <label for="docSach" style="margin-right: 1rem;color: black;font-family: Cabin, sans-serif">Đọc Sách</label>
-                <input type="checkbox" id="xemPhim" name="soThich" value="xemPhim" required/>
-                <label for="xemPhim" style="margin-right: 1rem;color: black;font-family: Cabin, sans-serif">Xem Phim</label>
-            </div>
+            <div style="margin-left: 20px; margin-top: 10px;">
+                <div style="margin-bottom: 14px">
+                    <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">HỌ VÀ TÊN</p>
+                    <input name="nameUser" value="{{user.nameUser}}" type="text" placeholder="Enter the name"  style="font-weight: bold;width: 40%; height: 30px; padding-left: 10px; font-family: Quicksand, sans-serif" required/>
+                </div>
+                <div style="margin-bottom: 14px">
+                    <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">SỐ ĐIỆN THOẠI</p>
+                    <input name="phoneUser" value="{{user.phoneUser}}" type="tel" placeholder="Enter the name"  style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px" required/>
+                </div>
+                <div style="margin-bottom: 14px">
+                    <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">NGÀY SINH</p>
+                    <input name="dateUser" value="{{user.dateUser}}" style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px" type="text" placeholder="Enter the name" required/>
+                </div>
+                <div style="margin-bottom: 14px">
+                    <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 6px; font-weight: 600; margin-top: 0">GIỚI TÍNH</p>
+                    <input name="gioiTinh" value="{{user.gioiTinh}}" style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px;" type="text" placeholder="Enter the nam/Nu" required/>
+                </div>
+                <div style="margin-bottom: 14px">
+                    <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 10px; font-weight: 600; margin-top: 0">SỞ THÍCH</p>
+                    <input name="soThich" value="{{user.soThich}}" style="font-weight: bold;font-family: Quicksand, sans-serif;width: 40%; height: 30px; padding-left: 10px;" type="text" placeholder="Enter the da bong, doc sach, xem phim,...." required/>
+                </div>
                 <div style="float: left">
                     <p style="color: black;font-size: 23px; font-family: Cabin, sans-serif; margin-bottom: 10px; font-weight: 600; margin-top: 0">GIỚI THIỆU</p>
-                    <textarea name="" id="" cols="80" rows="15" class="control" style="height: 180px; width: 83%"></textarea>
+                    <textarea name="gioiThieu" id="" cols="80" rows="15" class="control" style="height: 180px; width: 83%">
+                        {{user.gioiThieu}}
+                    </textarea>
                     <button class="btn-update" type="submit">UPDATE</button>
-                    <a href="HomeAnh.handlebars" style="text-decoration: none"><button class="btn-index" type="submit">TRANG CHỦ</button></a>
+                    <a href="HomeAnh.handlebars" style="text-decoration: none"><button class="btn-index" type="button">Trang chủ</button></a>
                 </div>
-
-        </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>

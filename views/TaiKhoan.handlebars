@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cabin:700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aclonica">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Alfa+Slab+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Archivo+Black">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <title>Danh Sach</title>
+</head>
+<body>
+    {{#each user}}
+        <a href="/{{this._id}}" target="pageNew">
+            <div style="width: 70%; height: 50px; border: 2px solid black; margin-top: 8px; text-align: center; background-color: #fff9b0; float: left; border-right: 0px">
+                <p style="color: black; margin-bottom: 0; font-family: Quicksand, sans-serif; font-weight: bold;">{{this.nameUser}}</p>
+                <p style="color: black; margin-bottom: 0; font-family: Quicksand, sans-serif; font-weight: bold;">{{this.phoneUser}}</p>
+            </div>
+        </a>
+        <a href="/delete/{{this._id}}">
+            <div style="width: 30%; height: 50px; border: 2px solid black; margin-top: 8px; text-align: center; background-color: #e84545; float: right">
+                <p style="color: white; margin-bottom: 0; font-family: Cabin, sans-serif; font-weight: bold;">Remove account</p>
+            </div>
+        </a>
+    {{/each}}
+</body>
+</html>

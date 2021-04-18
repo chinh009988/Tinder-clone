@@ -17,8 +17,13 @@
   },
   "homepage": "https://github.com/chinh009988/App-Tinder#readme",
   "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "~1.4.4",
     "express": "^4.17.1",
+    "mongodb": "^3.6.6",
+    "mongoose": "^5.12.4",
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
     "express-handlebars": "^5.3.0"
-  },
-  "devDependencies": {}
+  }
 }
